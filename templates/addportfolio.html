@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Phozogy Template">
+    <meta name="keywords" content="Phozogy, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Photoshot | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Header Section Begin -->
+   {% include 'nav.html' %}
+ <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bo-links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <span>Contact</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+ <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact-form">
+    <form method="post" action="/portfoliodata" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div>
+            <label>Full Name</label>
+            <input type="text" name="fullname" id="fullname">
+            <label>Email</label>
+            <input type="email" name="email" id="email">
+            <label>Phone no</label>
+            <input type="tel" name="phone" id="phone">
+            <label>Categories</label>
+            <br>
+            <br>
+            {% for data in allcatdata %}
+            {{ data.catname }}<input type="checkbox" style="height:20px; margin-left:0px; align:left;" name="catid" value="{{ data.id }}" id="category">
+            {% endfor %}
+            <br>
+            <br>
+            <label>Profile picture</label>
+            <input type="file" name="profile" id="profile">
+            <label>address</label>
+            <input type="text" name="address" id="address">
+            <label>Social Media</label>
+            <input type="url" name="medialink" id="social media">
+            <label>Professional Summary</label>
+            <input type="text" name="summary" id="summary">
+            <label>Technology</label>
+            <input type="text" name="technology" id="technology">
+            <label>Images</label>
+            <input type="file" name="images" id="images">
+            <label>Description</label>
+            <input type="text" name="desc" id="desc">
+            <label>Camera Model</label>
+            <input type="text" name="cmodel" id="camera">
+            <label>Lens Used</label>
+            <input type="text" name="lens" id="lens">
+            <label>Experience</label>
+            <input type="number" name="experience" id="experience">
+            <label>Out of Locations</label>
+            <input type="text" name="location" id="location">
+            <label>Online Gallery access</label>
+             <select class="form-select" name="gallery" id="gallery access" required>
+                 <option value="">Select Status</option>
+                 <option value="Available">Available</option>
+                 <option value="Unavailable">Unavailable</option>
+             </select>
+
+            <br>
+            <button type="submit" class="site-btn">Submit</button>
+            <p class="text-center mt-3"></p>
+
+        </div>
+    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+ </section>
+<footer class="footer-section">
+        <div class="container">
+            <b class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-about">
+                        <div class="fa-logo">
+                            <a href="#">
+                                <img src="static/img/f-logo.png" alt="">
+                            </a>
+                        </div>
+                        <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</p>
+                        <div class="fa-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Instagram</h5>
+                        <div class="fw-instagram">
+                            <img src="static/img/instagram/insta-1.jpg" alt="">
+                            <img src="static/img/instagram/insta-2.jpg" alt="">
+                            <img src="static/img/instagram/insta-3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Quick links</h5>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Gallery</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Subscribe</h5>
+                        <p>Imolor amet consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <div class="fw-subscribe">
+                            <form action="#">
+                                <input type="text" placeholder="Email">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+<!--                <div class="col-lg-12">-->
+<!--                    <div class="copyright-text">-->
+<!--                        <p>&lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;-->
+<!--  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>-->
+<!--  &lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </footer>-->
+<!--    &lt;!&ndash; Footer Section End &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Search model Begin &ndash;&gt;-->
+<!--    <div class="search-model">-->
+<!--        <div class="h-100 d-flex align-items-center justify-content-center">-->
+<!--            <div class="search-close-switch">+</div>-->
+<!--            <form class="search-model-form">-->
+<!--                <input type="text" id="search-input" placeholder="Search here.....">-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    <script src="static/js/isotope.pkgd.min.js"></script>
+    <script src="static/js/masonry.pkgd.min.js"></script>
+    <script src="static/js/jquery.slicknav.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>

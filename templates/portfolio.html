@@ -25,189 +25,26 @@
 
 <body>
     <!-- Header Section Begin -->
-  <header class="header-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="logo">
-                        <a href="./index.html">
-                            <img src="static/img/logo.png" height="200px"  alt="">
-                        </a>
-                    </div>
-                    <nav class="nav-menu">
-                        <ul>
-
-                           {% if request.session.log_name %}
-                            {% if request.session.log_role == "user" %}
-                            <li><a href="/pricing">Pricing</a></li>
-                            <li><a href="/portfolio">Portfolio</a></li>
-                            <li><a href="/blog">Blog</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="/gallery">Gallery</a></li>
-                                    <li><a href="/portfolio-details">Portfolio Details</a></li>
-                                    <li><a href="/blog-details">Blog Details</a></li>
-                                     <li><a href="/addbooking">Add Booking</a></li>
-                                    <li><a href="/contact">Contact</a></li>
-                                </ul>
-                            </li>
-                            {% else %}
-                            <li><a href="/addpackages">Addpackages</a></li>
-                            <li><a href="/addportfolio">AddPortfolio</a></li>
-                            <li><a href="/managepricing">Managepricing</a></li>
-                            <li><a href="/contact">Contact</a></li>
-                            {% endif %}
-                            <li><a href="/logout">Logout</a></li>
-                           <li>
-                             <span class="text-dark">{{ request.session.log_name }}</span>
-                            </li>
-                            {% else %}
-                            <li class="active"><a href="/index">Home</a></li>
-                            <li><a href="/about">About</a></li>
-                            <li><a href="/services">Services</a></li>
-                            <li><a href="/registration">Sign In</a></li>
-                            <li><a href="/loginpage">Log In</a></li>
-                            {% endif %}
-                        </ul>
-                    </nav>
-                    <div class="top-search search-switch">
-                        <i class="fa fa-search"></i>
-                    </div>
-                    <div id="mobile-menu-wrap"></div>
-                </div>
-            </div>
-        </div>
-    </header>
+   {% include 'nav.html' %}
     <!-- Header End -->
 
-    <!-- Hero Section Begin -->
-    <section class="hero-section">
-        <div class="hs-slider owl-carousel">
-            <div class="hs-item set-bg" data-setbg="static/img/hero/hero-1.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="hs-text">
-                                <h2>Photography Studio</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et<br /> dolore magna aliqua. Quis ipsum suspendisse ultrices
-                                    gravida accumsan lacus vel facilisis.</p>
-                                <a href="#" class="primary-btn">Contact us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hs-item set-bg" data-setbg="static/img/hero/hero-2.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="hs-text">
-                                <h2>Photography Studio</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et<br /> dolore magna aliqua. Quis ipsum suspendisse ultrices
-                                    gravida accumsan lacus vel facilisis.</p>
-                                <a href="#" class="primary-btn">Contact us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Hero Section End -->
-
-    <!-- Services Section Begin -->
-    <section class="services-section spad">
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="services-item">
-                        <img src="img/services/service-1.jpg" alt="">
-                        <h3>Shooting</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="services-item">
-                        <img src="img/services/service-2.jpg" alt="">
-                        <h3>Videos</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="services-item">
-                        <img src="img/services/service-3.jpg" alt="">
-                        <h3>Editing</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                <div class="col-lg-12">
+                    <div class="bo-links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <span>Portfolio</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Services Section End -->
-
-    <!-- Categories Section Begin -->
-    <section class="categories-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="section-title">
-                        <h2>Categories</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br /> eiusmod tempor
-                            incididunt ut labore et dolore.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="right-btn"><a href="#" class="primary-btn">VIew all</a></div>
-                </div>
-            </div>
-            <div class="categories-slider owl-carousel">
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="static/img/categories/cat-1.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Animal</h4>
-                        <span>120 pictures</span>
-                    </div>
-                </div>
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="static/img/categories/cat-2.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Natural</h4>
-                        <span>325 pictures</span>
-                    </div>
-                </div>
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="static/img/categories/cat-3.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Potrait</h4>
-                        <span>540 pictures</span>
-                    </div>
-                </div>
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="static/img/categories/cat-4.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Animal</h4>
-                        <span>120 pictures</span>
-                    </div>
-                </div>
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="static/img/categories/cat-5.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Animal</h4>
-                        <span>120 pictures</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Categories Section End -->
+    </div>
+    <!-- Breadcrumb End -->
 
     <!-- Portfolio Section Begin -->
-    <section class="portfolio-section spad">
+    <section class="portfolio-section portfolio-page spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -238,8 +75,7 @@
                                 <span>Fashion</span>
                             </div>
                         </div>
-                        <div class="pf-item large-width large-height set-bg lifestyle"
-                            data-setbg="static/img/portfolio/pf-2.jpg">
+                        <div class="pf-item large-width large-height set-bg lifestyle" data-setbg="static/img/portfolio/pf-2.jpg">
                             <a href="static/img/portfolio/pf-2.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
                             <div class="pf-text">
                                 <h4>COLORS SPEAK</h4>
@@ -302,8 +138,7 @@
                                 <span>Fashion</span>
                             </div>
                         </div>
-                        <div class="pf-item large-width large-height set-bg wedding"
-                            data-setbg="static/img/portfolio/pf-9.jpg">
+                        <div class="pf-item large-width large-height set-bg wedding" data-setbg="static/img/portfolio/pf-9.jpg">
                             <a href="static/img/portfolio/pf-9.jpg" class="pf-icon image-popup"><span class="icon_plus"></span></a>
                             <div class="pf-text">
                                 <h4>COLORS SPEAK</h4>
@@ -314,7 +149,7 @@
                 </div>
             </div>
         </div>
-        <div class="load-more-btn">
+        <div class="load-more-btn portfolio-btn">
             <a href="#">Load More</a>
         </div>
     </section>
@@ -331,8 +166,7 @@
                                 <img src="static/img/f-logo.png" alt="">
                             </a>
                         </div>
-                        <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                            et dolore magna aliqua.</p>
+                        <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <div class="fa-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
